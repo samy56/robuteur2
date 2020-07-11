@@ -1,0 +1,43 @@
+<frame>
+	<report>
+		<id> value_id </id>
+		<ter>
+			<source>
+				<sourceName> value_sourceName </sourceName>
+				<tag>
+					<tagID> 7777777777 </tagID>
+					<tagPC> value_tagPC </tagPC> // opt
+					<event> value_event </event> // opt
+					<utcTime> value_utcTime </utcTime> // opt
+					<antennaName> value_antennaName </antennaName> // opt
+					<rSSI> value_rSSI </rSSI> // opt
+					<rSSIMin> value_rSSIMin </rSSIMin> // opt
+					<rSSIMax> value_rSSIMax </rSSIMax> // opt
+					<channel> value_channel </channel> // opt
+					<power> value_power </power> // opt
+					<polarization> value_polarization </polarization> // opt
+					<inventoried> value_inventoried </inventoried> // opt
+					<filterDataAvailable> value_filterDataAvailable
+					</filterDataAvailable> // opt
+					<tagField> // opt
+						<fieldName> value_fieldName </fieldName>
+						<bank> value_bank </bank>
+						<startAddress> value_startAddress </startAddress>
+						<dataLength> value_dataLength </dataLength>
+						<data> value_data </data>
+					</tagField> // opt
+					<tagField> // opt
+						…
+					</tagField> // opt
+				</tag>
+				…
+				<tag> // opt
+					…
+				</tag> // opt
+			</source>
+			<source> // opt
+				…
+			</source> // opt
+		</ter>
+	</report>
+</frame>

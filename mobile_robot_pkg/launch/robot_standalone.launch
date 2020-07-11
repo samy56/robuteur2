@@ -1,0 +1,79 @@
+<launch>
+  
+
+  <node name="robot_bt_driver_node" pkg="mobile_robot_pkg" type="robot_bt_driver.py" output="screen">
+
+  </node>
+  
+   <node name="lpid_velocity" pkg="mobile_robot_pkg" type="pid_velocity.py" output="screen">
+      <remap from="wheel" to="lwheel"/>
+      <remap from="motor_cmd" to="left_wheel_speed"/>
+      <remap from="wheel_vtarget" to="lwheel_vtarget"/>
+      <remap from="wheel_vel" to="lwheel_vel"/>
+    
+      <rosparam param="Kp">400</rosparam>
+      <rosparam param="Ki">100</rosparam>
+      <rosparam param="Kd">0</rosparam>
+      <rosparam param="out_min">-255</rosparam>
+      <rosparam param="out_max">255</rosparam>
+      <rosparam param="rate">50</rosparam>
+      <rosparam param="timeout_ticks">4</rosparam>
+      <rosparam param="rolling_pts">5</rosparam>
+
+  </node>
+
+  <node name="rpid_velocity" pkg="mobile_robot_pkg" type="pid_velocity.py" output="screen">
+      <remap from="wheel" to="rwheel"/>
+      <remap from="motor_cmd" to="right_wheel_speed"/>
+      <remap from="wheel_vtarget" to="rwheel_vtarget"/>
+      <remap from="wheel_vel" to="rwheel_vel"/>
+      <rosparam param="Kp">400</rosparam>
+      <rosparam param="Ki">100</rosparam>
+      <rosparam param="Kd">0</rosparam>
+      <rosparam param="out_min">-255</rosparam>
+      <rosparam param="out_max">255</rosparam>
+      <rosparam param="rate">50</rosparam>
+      <rosparam param="timeout_ticks">4</rosparam>
+      <rosparam param="rolling_pts">5</rosparam>
+
+
+
+ </node>
+     
+       <node pkg="mobile_robot_pkg" type="combineMotors.py" name="combineMotors" output="screen"/>
+       <node pkg="mobile_robot_pkg" type="twist_to_motors.py" name="twist_to_motors" output="screen"/>
+      
+     
+
+
+
+</launch>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
